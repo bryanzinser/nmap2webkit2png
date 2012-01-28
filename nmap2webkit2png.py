@@ -1,17 +1,17 @@
-import subprocess, time, os, sys, math
+import subprocess, time, os, sys
 
 iplist = []
 
 def runwebkit2png(a):
-    awesome = 1
+    i = 1
     p = {}
     for item in a:
         arg = ['python', 'webkit2png.py', '-D', 'img/']
         ip = 'http://' + item
         arg.append(ip)
-        if awesome < 6:
-            p[awesome] = subprocess.Popen(arg)
-            awesome += 1
+        if i < 6:
+            p[i] = subprocess.Popen(arg)
+            i += 1
         else:
             time.sleep(6)
             p[1].terminate()
@@ -19,7 +19,7 @@ def runwebkit2png(a):
             p[3].terminate()
             p[4].terminate()
             p[5].terminate()
-            awesome = 1
+            i = 1
             p = {}
 
 def getformatedlist():
@@ -37,5 +37,5 @@ def getformatedlist():
 
 
 
-dude = getformatedlist()
-runwebkit2png(dude)
+formatedlist = getformatedlist()
+runwebkit2png(formatedlist)
