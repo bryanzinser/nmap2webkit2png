@@ -6,6 +6,7 @@ def runwebkit2png(a):
     i = 1
     p = {}
     for item in a:
+	    j = 1
         arg = ['python', 'webkit2png.py', '-D', 'img/']
         ip = 'http://' + item
         arg.append(ip)
@@ -14,11 +15,9 @@ def runwebkit2png(a):
             i += 1
         else:
             time.sleep(6)
-            p[1].terminate()
-            p[2].terminate()
-            p[3].terminate()
-            p[4].terminate()
-            p[5].terminate()
+            while j < 6
+                p[j].terminate()
+                j += 1
             i = 1
             p = {}
 
